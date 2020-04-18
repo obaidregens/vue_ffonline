@@ -8,7 +8,9 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    // alias is not as good as redirect for SEO, because two pages will have the same content
+    alias: "/home"
   },
   {
     path: "/about",
@@ -18,6 +20,10 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/about-us",
+    redirect: { name: "About" },
   }
 ];
 
