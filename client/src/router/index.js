@@ -1,30 +1,30 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import EventList from "../views/EventList.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
-    // alias is not as good as redirect for SEO, because two pages will have the same content
-    alias: "/home"
+    name: "event-list",
+    component: EventList,
   },
   {
-    path: "/about",
-    name: "About",
+    path: "/event",
+    name: "event-show",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "about" */ "../views/EventShow.vue")
   },
   {
-    path: "/about-us",
-    redirect: { name: "About" },
-  }
+    path: "/event/create",
+    name: "event-create",
+    component: () =>
+        import(/* webpackChunkName: "about" */ "../views/EventCreate.vue")
+  },
 ];
 
 const router = new VueRouter({
