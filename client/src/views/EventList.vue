@@ -1,10 +1,17 @@
 <template>
-    <h1>Events Listing</h1>
+    <div>
+        <h1>Events Listing</h1>
+        <EventCard/>
+    </div>
 </template>
 
 <script>
+    import EventCard from "@/components/EventCard";
     export default {
-        name: "EventList"
+        name: "EventList",
+        components:{
+            EventCard
+        }
     }
 </script>
 

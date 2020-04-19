@@ -1,11 +1,10 @@
 <template>
-    <h1>Showing event {{id}}</h1>
+    <h1>Page not found</h1>
 </template>
 
 <script>
     export default {
-        name: "EventShow",
-        props: ['id']
+        name: "not-found"
     }
 </script>
 
